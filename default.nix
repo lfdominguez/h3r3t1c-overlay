@@ -4,5 +4,5 @@ self: super: {
         src = /home/luis/Downloads/NVIDIA-Linux-x86_64-515.48.07.run;
         useGLVND = true;
       });
-  })
+  });
 }
