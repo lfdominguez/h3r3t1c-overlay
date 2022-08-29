@@ -36,5 +36,12 @@
                 };
             });
         };
+
+        packages.x86_64-linux = rec {
+            inherit
+                (pkgs)
+                awesome
+                ;
+        };
     };
 }
