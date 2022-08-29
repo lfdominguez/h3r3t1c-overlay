@@ -20,7 +20,7 @@ jobs:
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      - uses: cachix/cachix_action@v10
+      - uses: cachix/cachix-action@v10
         with:
           name: lfdominguez
           authToken: '${{ secrets.CACHIX_TOKEN }}'
