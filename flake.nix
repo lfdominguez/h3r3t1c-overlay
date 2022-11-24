@@ -10,12 +10,22 @@
     let
         system = "x86_64-linux";
 
+        mynixpkgs-unstable = import nixos-unstable {
+            inherit system
+
+            config.allowUnfree = true;
+            config.segger-jlink.acceptLicense = true;
+        };
+
         overlay-unstable = final: prev: {
-            unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+            unstable = mynixpkgs-unstable.legacyPackages.x86_64-linux;
         };
 
         pkgs = import nixpkgs {
             inherit system;
+
+            config.allowUnfree = true;
+            config.segger-jlink.acceptLicense = true;
 
             overlays = [
                 overlay-unstable
