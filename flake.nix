@@ -36,6 +36,37 @@
                     sha256 = "sha256-OBCUbkWEcWHokYNjfz4aRRkxr9rwGNkaKnovzoliFwU=";
                 };
             });
+            segger-jlink = prev.segger-jlink.overrideAttrs (old: rec {
+                installPhase = ''
+                    runHook preInstall
+                
+                    # Install binaries
+                    mkdir -p $out/bin
+                    mv J* $out/bin
+
+                    cp $out/bin/JLinkGDBServerCLEXE $out/bin/JLinkGDBServerCL
+
+                    # Install libraries
+                    mkdir -p $out/lib
+                    mv libjlinkarm.so* $out/lib
+
+                    # This library is opened via dlopen at runtime
+                    for libr in $out/lib/*; do
+                        ln -s $libr $out/bin
+                    done
+
+                    # Install docs and examples
+                    mkdir -p $out/share/docs
+                    mv Doc/* $out/share/docs
+                    mkdir -p $out/share/examples
+                    mv Samples/* $out/share/examples
+                
+                    # Install udev rule
+                    mkdir -p $out/lib/udev/rules.d
+                    mv 99-jlink.rules $out/lib/udev/rules.d/
+                    runHook postInstall
+                '';
+            });
         };
 
         packages.x86_64-linux = rec {
