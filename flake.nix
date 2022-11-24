@@ -10,15 +10,15 @@
     let
         system = "x86_64-linux";
 
-        mynixpkgs-unstable = import nixos-unstable {
-            inherit system
+        mynixpkgs-unstable = import nixpkgs-unstable {
+            inherit system;
 
             config.allowUnfree = true;
             config.segger-jlink.acceptLicense = true;
         };
 
         overlay-unstable = final: prev: {
-            unstable = mynixpkgs-unstable.legacyPackages.x86_64-linux;
+            unstable = mynixpkgs-unstable;
         };
 
         pkgs = import nixpkgs {
@@ -31,8 +31,6 @@
                 overlay-unstable
                 self.overlays.default
             ];
-
-            config.allowUnfree = true;
         };
     in {
         overlays.default = final: prev: rec {
@@ -54,7 +52,7 @@
                     mkdir -p $out/bin
                     mv J* $out/bin
 
-                    cp $out/bin/JLinkGDBServerCLEXE $out/bin/JLinkGDBServerCL
+                    cp $out/bin/JLinkGDBServerCLExe $out/bin/JLinkGDBServerCL
 
                     # Install libraries
                     mkdir -p $out/lib
