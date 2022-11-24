@@ -73,6 +73,7 @@
             inherit
                 (pkgs)
                 awesome
+                segger-jlink
                 ;
         };
     };
