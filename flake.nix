@@ -36,7 +36,7 @@
                     sha256 = "sha256-OBCUbkWEcWHokYNjfz4aRRkxr9rwGNkaKnovzoliFwU=";
                 };
             });
-            segger-jlink = prev.segger-jlink.overrideAttrs (old: rec {
+            segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
                 
