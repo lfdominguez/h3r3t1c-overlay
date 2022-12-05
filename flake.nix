@@ -73,9 +73,13 @@
             inherit
                 (pkgs)
                 segger-jlink
+<<<<<<< HEAD
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
+=======
+		open-lens
+>>>>>>> 8ec5523 (Add Open-Lens)
                 ;
         };
     };
