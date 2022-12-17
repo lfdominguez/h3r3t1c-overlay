@@ -35,12 +35,12 @@
     in {
         overlays.default = final: prev: rec {
             awesome = prev.awesome.overrideAttrs (old: rec {
-                version = "4.4.0.alpha-h3r3t1c";
+                version = "master";
                 patches = [];
                 src = pkgs.fetchFromGitHub {
                     owner = "awesomewm";
                     repo = "awesome";
-                    rev = "05a405b38bbcb8fa3b344d45d94d4f56b83c74df";
+                    rev = "1239cdf4bc9208f57e4bf018d462c2ee63bf0387";
                     sha256 = "sha256-OBCUbkWEcWHokYNjfz4aRRkxr9rwGNkaKnovzoliFwU=";
                 };
             });
