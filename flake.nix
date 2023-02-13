@@ -88,7 +88,7 @@
                 (pkgs)
                 awesome
                 segger-jlink
-                jetbrains
+                jetbrains.clion
                 ;
         };
     };
