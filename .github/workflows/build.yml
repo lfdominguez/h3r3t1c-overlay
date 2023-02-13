@@ -25,4 +25,7 @@ jobs:
           name: h3r3t1c-overlays
           authToken: '${{ secrets.CACHIX_TOKEN }}'
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-      - run: nix flake show --json | jq '.packages."x86_64-linux"|keys[]'| xargs -I {} nix build .#{}
+      - run: nix build .#packages.x86_64-linux.awesome
+      - run: nix build .#packages.x86_64-linux.segger-jlink
+      - run: nix build .#packages.x86_64-linux.jetbrains.clion
+

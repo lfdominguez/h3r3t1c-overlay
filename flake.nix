@@ -34,7 +34,7 @@
         };
     in {
         overlays.default = final: prev: rec {
-            jetbrains-clion = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
+            jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
                     vmopts = pkgs.config.jetbrains.vmopts or null;
                     jdk = prev.jetbrains.jdk;
                 }) // {
@@ -88,7 +88,7 @@
                 (pkgs)
                 awesome
                 segger-jlink
-                jetbrains-clion
+                jetbrains
                 ;
         };
     };
