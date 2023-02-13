@@ -39,7 +39,7 @@
                     jdk = prev.jetbrains.jdk;
                 }) // {
                     jdk = prev.jetbrains.jdk;
-                }).clion;
+                });
             awesome = prev.awesome.overrideAttrs (old: rec {
                 version = "master";
                 patches = [];
