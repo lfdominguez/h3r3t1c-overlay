@@ -35,7 +35,7 @@
     in {
         overlays.default = final: prev: rec {
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
-                    vmopts = config.jetbrains.vmopts or null;
+                    vmopts = pkgs.config.jetbrains.vmopts or null;
                     jdk = prev.jetbrains.jdk;
                 }) // {
                     jdk = prev.jetbrains.jdk;
