@@ -34,11 +34,12 @@
         };
     in {
         overlays.default = final: prev: rec {
+            jetbrains-jdk = pkgs.callPackage ./packages/jetbrains-jdk {};
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
                     vmopts = pkgs.config.jetbrains.vmopts or null;
-                    jdk = prev.jdk17;
+                    jdk = jetbrains-jdk;
                 }) // {
-                    jdk = prev.jdk17;
+                    jdk = jetbrains-jdk;
                 });
             awesome = prev.awesome.overrideAttrs (old: rec {
                 version = "master";
