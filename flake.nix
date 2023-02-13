@@ -34,6 +34,12 @@
         };
     in {
         overlays.default = final: prev: rec {
+            jetbrains = (recurseIntoAttrs (callPackages ./packages/jetbrains {
+                    vmopts = config.jetbrains.vmopts or null;
+                    jdk = prev.jetbrains.jdk;
+                }) // {
+                    jdk = prev.jetbrains.jdk;
+                });
             awesome = prev.awesome.overrideAttrs (old: rec {
                 version = "master";
                 patches = [];
