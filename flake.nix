@@ -36,9 +36,9 @@
         overlays.default = final: prev: rec {
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
                     vmopts = pkgs.config.jetbrains.vmopts or null;
-                    jdk = prev.jetbrains.jdk;
+                    jdk = prev.jdk17;
                 }) // {
-                    jdk = prev.jetbrains.jdk;
+                    jdk = prev.jdk17;
                 });
             awesome = prev.awesome.overrideAttrs (old: rec {
                 version = "master";
