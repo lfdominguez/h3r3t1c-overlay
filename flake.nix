@@ -34,6 +34,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            jetbrains-toolbox = pkgs.callPackage ./packages/jetbrains-toolbox {};
             jetbrains-jdk = pkgs.callPackage ./packages/jetbrains-jdk {};
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
                     vmopts = pkgs.config.jetbrains.vmopts or null;
@@ -90,6 +91,7 @@
                 awesome
                 segger-jlink
                 jetbrains
+                jetbrains-toolbox
                 ;
         };
     };

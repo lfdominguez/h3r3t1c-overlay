@@ -1,0 +1,68 @@
+{ lib, stdenv, callPackage, fetchurl, patchelf, makeDesktopItem, zlib, autoPatchelfHook }:
+
+let
+  pname = "jetbrains-toolbox";
+  version = "1.27.2.13801";
+  sha256 = "ece06062a936d0e765ebbdf5d89eb2224cdbaf059a1d8b049a16a6d7f3631275";
+
+in stdenv.mkDerivation rec {
+    inherit pname version sha256;
+
+    name = pname;
+
+    desktopItem = makeDesktopItem {
+        name = pname;
+        exec = pname;
+        comment = "JetBrains ToolBox";
+        desktopName = "Jetbrains ToolBox";
+        genericName = "ToolBox";
+        categories = [ "Development" ];
+        icon = pname;
+    };
+
+    nativeBuildInputs = [ autoPatchelfHook ];
+    buildInputs = [ zlib ];
+
+    src = fetchurl {
+        url = "https://download.jetbrains.com/toolbox/${pname}-${version}.tar.gz";
+        inherit sha256;
+    };
+
+    postPatch = ''
+        get_file_size() {
+            local fname="$1"
+            echo $(ls -l $fname | cut -d ' ' -f5)
+        }
+
+        munge_size_hack() {
+            local fname="$1"
+            local size="$2"
+            strip $fname
+            truncate --size=$size $fname
+        }
+
+        interpreter=$(echo ${stdenv.cc.libc}/lib/ld-linux*.so.2)
+
+        target_size=$(get_file_size jetbrains-toolbox)
+        #patchelf --set-interpreter "$interpreter" jetbrains-toolbox
+        #munge_size_hack jetbrains-toolbox $target_size
+    '';
+
+    installPhase = ''
+        runHook preInstall
+
+        mkdir -p $out/$pname
+        cp -a . $out/$pname
+
+        runHook postInstall
+    '';
+
+    meta = with lib; {
+      description = "A toolbox to manage JetBrains products";
+      longDescription = ''
+      The JetBrains Toolbox lets you install and manage JetBrains Products in muiltiple versions.
+      '';
+      homepage = "https://www.jetbrains.com/toolbox/";
+      platforms = platforms.all;
+    };
+}
