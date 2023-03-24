@@ -3,11 +3,11 @@
     "clion": {
       "update-channel": "CLion EAP",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
-      "version": "231.7665.29",
-      "sha256": "a31221a8acf04ccec8c0ae0b5b586b227227b7a3046f72ab635a51520b9797ee",
-      "url": "https://download.jetbrains.com/cpp/CLion-231.7665.29.tar.gz",
-      "version-major-minor": "231.6890.13",
-      "build_number": "231.7665.29"
+      "version": "231.8109.141",
+      "sha256": "ef7b5448227fd48561f0e108ff26741c5a6f5932cfeda35bc2cee1cd6b81ba9b",
+      "url": "https://download.jetbrains.com/cpp/CLion-231.8109.141.tar.gz",
+      "version-major-minor": "231.8109.141",
+      "build_number": "231.8109.141"
     },
     "datagrip": {
       "update-channel": "DataGrip RELEASE",
