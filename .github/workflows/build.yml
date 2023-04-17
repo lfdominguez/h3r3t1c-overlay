@@ -28,4 +28,5 @@ jobs:
       - run: nix build .#packages.x86_64-linux.awesome
       - run: nix build .#packages.x86_64-linux.segger-jlink
       - run: nix build .#packages.x86_64-linux.jetbrains.clion
+      - run: nix build .#packages.x86_64-linux.libfprint
 

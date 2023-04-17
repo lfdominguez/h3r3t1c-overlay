@@ -83,6 +83,15 @@
                     runHook postInstall
                 '';
             });
+            libfprint = prev.libfprint.overrideAttrs (old: rec {
+                version = "1.94.5-lenovo";
+                src = pkgs.fetchFromGitHub {
+                    owner = "lfdominguez";
+                    repo = "libfprint";
+                    rev = "d60b4eec7e8e91308990516c9e7dc8fb19682173";
+                    sha256 = "sha256-mldk5yuUrO/7oj/GtYl/t16pMSHO1oeCkMEX26khXSo=";
+                };
+            });
         };
 
         packages.x86_64-linux = rec {
@@ -92,6 +101,7 @@
                 segger-jlink
                 jetbrains
                 jetbrains-toolbox
+                libfprint
                 ;
         };
     };
