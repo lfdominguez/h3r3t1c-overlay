@@ -34,6 +34,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            libfprint = pkgs.callPackage ./packages/libfprint {};
             jetbrains-toolbox = pkgs.callPackage ./packages/jetbrains-toolbox {};
             jetbrains-jdk = pkgs.callPackage ./packages/jetbrains-jdk {};
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
@@ -82,15 +83,6 @@
                     mv 99-jlink.rules $out/lib/udev/rules.d/
                     runHook postInstall
                 '';
-            });
-            libfprint = prev.libfprint.overrideAttrs (old: rec {
-                version = "1.94.5-lenovo";
-                src = pkgs.fetchFromGitHub {
-                    owner = "lfdominguez";
-                    repo = "libfprint";
-                    rev = "d60b4eec7e8e91308990516c9e7dc8fb19682173";
-                    sha256 = "sha256-mldk5yuUrO/7oj/GtYl/t16pMSHO1oeCkMEX26khXSo=";
-                };
             });
         };
 
