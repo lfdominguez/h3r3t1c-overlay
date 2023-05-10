@@ -1,13 +1,13 @@
 {
   "linux": {
     "clion": {
-      "update-channel": "CLion EAP",
+      "update-channel": "CLion",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
-      "version": "231.8109.141",
-      "sha256": "ef7b5448227fd48561f0e108ff26741c5a6f5932cfeda35bc2cee1cd6b81ba9b",
-      "url": "https://download.jetbrains.com/cpp/CLion-231.8109.141.tar.gz",
-      "version-major-minor": "231.8109.141",
-      "build_number": "231.8109.141"
+      "version": "2023.1.2",
+      "sha256": "e3efc51a4431dc67da6463a8a37aab8ad6a214a8338430ae61cd4add5e7e5b04",
+      "url": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
+      "version-major-minor": "231.8770.66",
+      "build_number": "231.8770.66"
     },
     "datagrip": {
       "update-channel": "DataGrip RELEASE",
