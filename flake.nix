@@ -37,6 +37,7 @@
             libfprint = pkgs.callPackage ./packages/libfprint {};
             jetbrains-toolbox = pkgs.callPackage ./packages/jetbrains-toolbox {};
             jetbrains-jdk = pkgs.callPackage ./packages/jetbrains-jdk {};
+            mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
                     vmopts = pkgs.config.jetbrains.vmopts or null;
                     jdk = jetbrains-jdk;
@@ -94,6 +95,7 @@
                 jetbrains
                 jetbrains-toolbox
                 libfprint
+                mpv-inhibit-gnome
                 ;
         };
     };
