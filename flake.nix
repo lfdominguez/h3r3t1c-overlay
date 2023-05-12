@@ -35,25 +35,7 @@
     in {
         overlays.default = final: prev: rec {
             libfprint = pkgs.callPackage ./packages/libfprint {};
-            jetbrains-toolbox = pkgs.callPackage ./packages/jetbrains-toolbox {};
-            jetbrains-jdk = pkgs.callPackage ./packages/jetbrains-jdk {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
-            jetbrains = (pkgs.recurseIntoAttrs (pkgs.callPackages ./packages/jetbrains {
-                    vmopts = pkgs.config.jetbrains.vmopts or null;
-                    jdk = jetbrains-jdk;
-                }) // {
-                    jdk = jetbrains-jdk;
-                });
-            awesome = prev.awesome.overrideAttrs (old: rec {
-                version = "master";
-                patches = [];
-                src = pkgs.fetchFromGitHub {
-                    owner = "awesomewm";
-                    repo = "awesome";
-                    rev = "1239cdf4bc9208f57e4bf018d462c2ee63bf0387";
-                    sha256 = "sha256-OBCUbkWEcWHokYNjfz4aRRkxr9rwGNkaKnovzoliFwU=";
-                };
-            });
             segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
@@ -90,10 +72,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
-                awesome
                 segger-jlink
-                jetbrains
-                jetbrains-toolbox
                 libfprint
                 mpv-inhibit-gnome
                 ;

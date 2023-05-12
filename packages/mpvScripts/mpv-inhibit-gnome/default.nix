@@ -30,6 +30,8 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
+  passthru.scriptName = "mpv_inhibit_gnome.so";
+
   meta = with lib; {
     description = "This mpv plugin prevents screen blanking in GNOME";
     homepage = "https://github.com/Guldoman/mpv_inhibit_gnome";
