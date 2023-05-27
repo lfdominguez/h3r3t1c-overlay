@@ -2,7 +2,6 @@
     description = "My own overlay";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-22.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
@@ -36,7 +35,7 @@
         overlays.default = final: prev: rec {
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
-            qtnodeeditor = pkgs.callPackage ./packages/qt/qnodeeditor {};
+            qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
             segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
