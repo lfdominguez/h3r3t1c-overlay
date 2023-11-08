@@ -33,6 +33,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            cups-brother-hl3150cdn = pkgs.callPackage ./packages/cups/printers/brother/hl3150cdn.nix {};
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
@@ -72,18 +73,11 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                cups-brother-hl3150cdn
                 segger-jlink
-<<<<<<< HEAD
-<<<<<<< HEAD
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
-=======
-		open-lens
->>>>>>> 8ec5523 (Add Open-Lens)
-=======
-		        open-lens
->>>>>>> 50a38fa (Add BROTHER printer)
                 ;
         };
     };
