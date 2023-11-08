@@ -74,12 +74,16 @@
                 (pkgs)
                 segger-jlink
 <<<<<<< HEAD
+<<<<<<< HEAD
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
 =======
 		open-lens
 >>>>>>> 8ec5523 (Add Open-Lens)
+=======
+		        open-lens
+>>>>>>> 50a38fa (Add BROTHER printer)
                 ;
         };
     };
