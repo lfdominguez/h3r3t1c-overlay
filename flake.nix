@@ -33,7 +33,7 @@
         };
     in {
         overlays.default = final: prev: rec {
-            cups-brother-hl3150cdn = pkgs.callPackage ./packages/cups/printers/brother/hl3150cdn.nix {};
+            cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
