@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-    install -m755 -D source/passbolt $out/bin/passbolt
+    install -m755 -D source/passbolt $out/bin/passbolt-cli
     runHook postInstall
   '';
 
