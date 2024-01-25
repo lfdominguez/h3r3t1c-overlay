@@ -81,6 +81,7 @@
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
+                passbolt-cli
                 ;
         };
     };
