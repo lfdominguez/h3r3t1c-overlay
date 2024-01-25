@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/passbolt/go-passbolt-cli/releases/download/v${version}/go-passbolt-cli_${version}_linux_amd64.tar.gz";
-    hash = "sha256-5/47GUjLx8SDIAvlAmWq8UxCDAVK4pQT1O7tWbdtQts=";
+    hash = "sha256-ucB73uxk+CUioVb2xYD9ZQatQ70pO2dQecxYMUkFp/k=";
     stripRoot = false;
   };
 
