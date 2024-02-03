@@ -39,6 +39,7 @@
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
             passbolt-cli = pkgs.callPackage ./packages/passbolt-cli {};
+            stable-diffusion-cpp = pkgs.callPackage ./packages/stable-diffusion-cpp {};
             segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
@@ -81,7 +82,11 @@
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
+<<<<<<< HEAD
                 passbolt-cli
+=======
+                stable-diffusion-cpp
+>>>>>>> 1bb155b (Add stable-diffusion-cpp package)
                 ;
         };
     };
