@@ -85,23 +85,23 @@ effectiveStdenv.mkDerivation (finalAttrs: {
   ]
   ++ lib.optionals metalSupport [
     (lib.cmakeOptionType "STRING" "CMAKE_C_FLAGS" "-D__ARM_FEATURE_DOTPROD=1" )
-    (lib.cmakeBool "SD_METAL" true)
-    (lib.cmakeBool "SD_FLASH_ATTN" true)
+    "-DSD_METAL=ON"
+    "-DSD_FLASH_ATTN=ON"
   ]
   ++ lib.optionals cudaSupport [
-    (lib.cmakeBool "DS_CUBLAS" true)
+    "-DSD_CUBLAS=ON"
   ]
   ++ lib.optionals rocmSupport [
-    (lib.cmakeBool "SD_HIPBLAS" true)
+    "SD_HIPBLAS=ON"
     (lib.cmakeOptionType "STRING" "CMAKE_C_COMPILER" "hipcc" )
     (lib.cmakeOptionType "STRING" "CMAKE_CXX_COMPILER" "hipcc" )
     (lib.cmakeBool "CMAKE_POSITION_INDEPENDENT_CODE" true)
-    (lib.cmakeOptionType "STRING" "AMDGPU_TARGETS" "gfx1100" )
-    (lib.cmakeBool "SD_FLASH_ATTN" true)
+    "-DAMDGPU_TARGETS=gfx1100"
+    "-DSD_FLASH_ATTN=ON"
   ]
   ++ lib.optionals blasSupport [
-    (lib.cmakeBool "GGML_OPENBLAS" true)
-    (lib.cmakeBool "SD_FLASH_ATTN" true)
+    "-DGGML_OPENBLAS=ON"
+    "-DSD_FLASH_ATTN=ON"
   ];
 
   installPhase = ''
