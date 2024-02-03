@@ -82,11 +82,8 @@
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
-<<<<<<< HEAD
                 passbolt-cli
-=======
                 stable-diffusion-cpp
->>>>>>> 1bb155b (Add stable-diffusion-cpp package)
                 ;
         };
     };
