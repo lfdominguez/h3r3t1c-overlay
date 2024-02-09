@@ -40,6 +40,9 @@
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
             passbolt-cli = pkgs.callPackage ./packages/passbolt-cli {};
             stable-diffusion-cpp = pkgs.callPackage ./packages/stable-diffusion-cpp {};
+            jetbrains = pkgs.callPackage ./packages/jetbrains {
+                jdk = pkgs.unstable.jetbrains.jdk;
+            };
             segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
@@ -84,6 +87,7 @@
                 qtnodeeditor
                 passbolt-cli
                 stable-diffusion-cpp
+                jetbrains
                 ;
         };
     };
