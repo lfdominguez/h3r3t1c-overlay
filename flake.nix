@@ -35,6 +35,7 @@
         overlays.default = final: prev: rec {
             goto = pkgs.callPackage ./packages/goto {};
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
+            loco-cli = pkgs.callPackage ./packages/loco-cli {};
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
@@ -46,7 +47,7 @@
             segger-jlink = prev.unstable.segger-jlink.overrideAttrs (old: rec {
                 installPhase = ''
                     runHook preInstall
-                
+
                     # Install binaries
                     mkdir -p $out/bin
                     mv J* $out/bin
@@ -67,7 +68,7 @@
                     mv Doc/* $out/share/docs
                     mkdir -p $out/share/examples
                     mv Samples/* $out/share/examples
-                
+
                     # Install udev rule
                     mkdir -p $out/lib/udev/rules.d
                     mv 99-jlink.rules $out/lib/udev/rules.d/
@@ -88,6 +89,7 @@
                 passbolt-cli
                 stable-diffusion-cpp
                 jetbrains
+                loco-cli
                 ;
         };
     };
