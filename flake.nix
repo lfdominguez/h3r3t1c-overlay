@@ -36,6 +36,7 @@
             goto = pkgs.callPackage ./packages/goto {};
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
             loco-cli = pkgs.callPackage ./packages/loco-cli {};
+            clickup = pkgs.callPackage ./packages/clickup {};
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
@@ -82,7 +83,7 @@
                 (pkgs)
                 goto
                 cups-brother-hl3150cdn
-                segger-jlink
+                # segger-jlink
                 libfprint
                 mpv-inhibit-gnome
                 qtnodeeditor
@@ -90,6 +91,7 @@
                 stable-diffusion-cpp
                 jetbrains
                 loco-cli
+                clickup
                 ;
         };
     };
