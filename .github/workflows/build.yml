@@ -25,6 +25,6 @@ jobs:
           name: h3r3t1c-overlays
           authToken: '${{ secrets.CACHIX_TOKEN }}'
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-      - run: nix build .#packages.x86_64-linux.segger-jlink
-      - run: nix build .#packages.x86_64-linux.mpv-inhibit-gnome
+      - run: nix build .#packages.x86_64-linux.clickup
+      - run: nix build .#packages.x86_64-linux.loco-cli
 
