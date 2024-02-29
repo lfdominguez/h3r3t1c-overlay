@@ -76,18 +76,18 @@
     "pycharm-community": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}.tar.gz",
-      "version": "2023.3.3",
-      "sha256": "f71513f428f5df3b97b09c415967ff2db3a4e7172f293e621b3f04cd1d695443",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.3.tar.gz",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "27546b7900c0da52baa9b14f88406c2b1244c570363e506f225bf101e65cea79",
+      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.4.tar.gz",
+      "build_number": "233.14475.56"
     },
     "pycharm-professional": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}.tar.gz",
-      "version": "2023.3.3",
-      "sha256": "29c4955410b2ea26f0cd0f44e02c8fe2b1b7dad075f0739652051faa6f84797b",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.3.tar.gz",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "41367c6d92f69d33c0f375e4a058fef799be00d14437402371dc8ca3e5f1161e",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.4.tar.gz",
+      "build_number": "233.14475.56"
     },
     "rider": {
       "update-channel": "Rider RELEASE",
@@ -109,9 +109,9 @@
       "update-channel": "RustRover EAP",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}.tar.gz",
       "version": "2023.3 EAP",
-      "sha256": "62d4001c9397c1a8075e3345ceaf9f11f24dae9336804b03ed6a818c2f8850b2",
-      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.152.tar.gz",
-      "build_number": "233.14015.152"
+      "sha256": "e3b70ee54bd6ff2ac900400ebdf8ae2c10c4206e51d3b52c1c68bd4f56244f1c",
+      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.153.tar.gz",
+      "build_number": "233.14015.153"
     },
     "webstorm": {
       "update-channel": "WebStorm RELEASE",
@@ -199,18 +199,18 @@
     "pycharm-community": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}-aarch64.tar.gz",
-      "version": "2023.3.3",
-      "sha256": "6e8340b494d73e3ff8de46a3e6e70ff8198b76c989c859faef59cc18724a36a2",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.3-aarch64.tar.gz",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "9c9678921b118f90519ba73543c63657d262e6aa7a7fe6b2293dcd5f26943531",
+      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.4-aarch64.tar.gz",
+      "build_number": "233.14475.56"
     },
     "pycharm-professional": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}-aarch64.tar.gz",
-      "version": "2023.3.3",
-      "sha256": "bf0d8935b316ca2ce2b27a8ee98042f50a0b69ab1a7bb7bb1278941178d54fcf",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.3-aarch64.tar.gz",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "4800ba2575ba2b277785f9d3c9fce05d552c623b41db220f7dfdd886874b7042",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.4-aarch64.tar.gz",
+      "build_number": "233.14475.56"
     },
     "rider": {
       "update-channel": "Rider RELEASE",
@@ -232,9 +232,9 @@
       "update-channel": "RustRover EAP",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}-aarch64.tar.gz",
       "version": "2023.3 EAP",
-      "sha256": "4443d6e53c7a0a5ac1b51b784d3b6304a0eb356978870456e31e82038e49c409",
-      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.152-aarch64.tar.gz",
-      "build_number": "233.14015.152"
+      "sha256": "606161dd8871216cb2bdb38ff30491040c51f940e9bca2126ab1b42537eb762b",
+      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.153-aarch64.tar.gz",
+      "build_number": "233.14015.153"
     },
     "webstorm": {
       "update-channel": "WebStorm RELEASE",
@@ -322,18 +322,18 @@
     "pycharm-community": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}.dmg",
-      "version": "2023.3.3",
-      "sha256": "b42894264cf0f14fe5a93807999c89870c6709e3f1edf9d629ea74c151825451",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.3.dmg",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "492268d99fec38fa81bd02772ed57b243403ecad1f5f28b3a1150502cf8b4a6c",
+      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.4.dmg",
+      "build_number": "233.14475.56"
     },
     "pycharm-professional": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}.dmg",
-      "version": "2023.3.3",
-      "sha256": "c86b6e279ac6a82ce79e187c96b671c1b3bbb6cc2c7c5686454705316b398e9c",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.3.dmg",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "59512bbe61a9332f02e78d34b85ab2563b5dac2fa9882519ed27cfcbccef5dc2",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.4.dmg",
+      "build_number": "233.14475.56"
     },
     "rider": {
       "update-channel": "Rider RELEASE",
@@ -355,9 +355,9 @@
       "update-channel": "RustRover EAP",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}.dmg",
       "version": "2023.3 EAP",
-      "sha256": "c6c17c017b202401150aa54a727f3ea68a4848e96d69f47ea276ed68be682d45",
-      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.152.dmg",
-      "build_number": "233.14015.152"
+      "sha256": "5fd78441a717bbcb5c66636135a44cced26c1038682610300a201b18584bcec0",
+      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.153.dmg",
+      "build_number": "233.14015.153"
     },
     "webstorm": {
       "update-channel": "WebStorm RELEASE",
@@ -445,18 +445,18 @@
     "pycharm-community": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}-aarch64.dmg",
-      "version": "2023.3.3",
-      "sha256": "1e4dd6fb00d7557ba381406279818a3e7892027eff0fbb1b6cdf4b112c47899e",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.3-aarch64.dmg",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "885ed6dcb7b99147e345ce2d088e2636e8317a5e71ff67e9bc9d0f770266646e",
+      "url": "https://download.jetbrains.com/python/pycharm-community-2023.3.4-aarch64.dmg",
+      "build_number": "233.14475.56"
     },
     "pycharm-professional": {
       "update-channel": "PyCharm RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}-aarch64.dmg",
-      "version": "2023.3.3",
-      "sha256": "84fb09938539dc2f7ecfbd9be20a916cf542fc4e0b69a319d17e4180e4d6a244",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.3-aarch64.dmg",
-      "build_number": "233.13763.11"
+      "version": "2023.3.4",
+      "sha256": "58dbf1628f59950d40be4ed73199ce92ef36be6735823d9566135ddea16c1718",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-2023.3.4-aarch64.dmg",
+      "build_number": "233.14475.56"
     },
     "rider": {
       "update-channel": "Rider RELEASE",
@@ -478,9 +478,9 @@
       "update-channel": "RustRover EAP",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}-aarch64.dmg",
       "version": "2023.3 EAP",
-      "sha256": "598e57d082db05fcc38d2eee5d307e3a9c0912c0a8c41e1d4d6a1b8076c25c24",
-      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.152-aarch64.dmg",
-      "build_number": "233.14015.152"
+      "sha256": "6393fba977fe887db47311787652c424c6c1d81bdb64eaf4c2e7213453d27a7c",
+      "url": "https://download.jetbrains.com/rustrover/RustRover-233.14015.153-aarch64.dmg",
+      "build_number": "233.14015.153"
     },
     "webstorm": {
       "update-channel": "WebStorm RELEASE",

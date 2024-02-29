@@ -23,6 +23,8 @@
 , xz
 , xorg
 , libGL
+, audit
+, linux-pam
 
 , vmopts ? null
 }:
@@ -219,6 +221,8 @@ rec {
       fontconfig
       xorg.libX11
       libGL
+      audit.dev
+      linux-pam
     ] ++ lib.optionals (stdenv.isLinux && stdenv.isAarch64) [
       expat
       libxml2
@@ -241,7 +245,7 @@ rec {
           --replace-needed libcrypto.so.10 libcrypto.so
 
         interp="$(cat $NIX_CC/nix-support/dynamic-linker)"
-        patchelf --set-interpreter $interp $PWD/plugins/intellij-rust/bin/linux/*/intellij-rust-native-helper
+        #patchelf --set-interpreter $interp $PWD/plugins/intellij-rust/bin/linux/*/intellij-rust-native-helper
         chmod +x $PWD/plugins/intellij-rust/bin/linux/*/intellij-rust-native-helper
       )
     '';
