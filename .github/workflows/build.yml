@@ -27,4 +27,5 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
       - run: nix build .#packages.x86_64-linux.clickup
       - run: nix build .#packages.x86_64-linux.loco-cli
+      - run: nix build .#packages.x86_64-linux.zed
 

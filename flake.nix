@@ -3,9 +3,10 @@
 
     inputs = {
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+        rust-overlay.url = "github:oxalica/rust-overlay";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay }:
     let
         system = "x86_64-linux";
 
@@ -29,6 +30,7 @@
             overlays = [
                 overlay-unstable
                 self.overlays.default
+                rust-overlay.overlays.default
             ];
         };
     in {
@@ -37,6 +39,7 @@
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
             loco-cli = pkgs.callPackage ./packages/loco-cli {};
             clickup = pkgs.callPackage ./packages/clickup {};
+            zed = pkgs.callPackage ./packages/zed {};
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
@@ -92,6 +95,7 @@
                 jetbrains
                 loco-cli
                 clickup
+                zed
                 ;
         };
     };
