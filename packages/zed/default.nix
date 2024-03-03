@@ -17,6 +17,7 @@
 , zlib
 , zstd
 , alsa-lib
+, libxkbcommon
 , pkgs
 }:
 
@@ -33,16 +34,14 @@ let
   };
 
   rustPlatform = makeRustPlatform {
-    cargo = pkgs.rust-bin.stable.latest.default;
-    rustc = pkgs.rust-bin.stable.latest.default;
+    cargo = pkgs.rust-bin.stable."1.75.0".default;
+    rustc = pkgs.rust-bin.stable."1.75.0".default;
   };
 
-in rustPlatform.buildRustPackage rec {
+in pkgs.unstable.rustPlatform.buildRustPackage rec {
   inherit version src;
 
   pname = "${name}";
-
-  rust = "1.76";
 
   nativeBuildInputs = [
     curl 
@@ -64,6 +63,7 @@ in rustPlatform.buildRustPackage rec {
   ] ++ lib.optionals stdenv.isLinux [
     alsa-lib
     xorg.libxcb
+    libxkbcommon
     wayland
   ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.SystemConfiguration ];
 
