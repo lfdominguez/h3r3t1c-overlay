@@ -18,6 +18,7 @@
 , zstd
 , alsa-lib
 , libxkbcommon
+, vulkan-loader
 , pkgs
 }:
 
@@ -65,6 +66,7 @@ in pkgs.unstable.rustPlatform.buildRustPackage rec {
     xorg.libxcb
     libxkbcommon
     wayland
+    vulkan-loader
   ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.SystemConfiguration ];
 
   buildFeatures = [
@@ -92,6 +94,10 @@ in pkgs.unstable.rustPlatform.buildRustPackage rec {
     "--skip=test_setting_language_when_saving_as_single_file_worktree"
     "--skip=test_window_edit_state"
   ];
+
+  postFixup = ''
+    patchelf --add-rpath ${ pkgs.vulkan-loader }/lib $out/bin/*
+  '';
 
   cargoLock = {
     lockFile = src + /Cargo.lock;
