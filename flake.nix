@@ -4,9 +4,10 @@
     inputs = {
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
         rust-overlay.url = "github:oxalica/rust-overlay";
+        pyproject-nix.url = "github:nix-community/pyproject.nix";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, pyproject-nix }:
     let
         system = "x86_64-linux";
 
@@ -40,6 +41,7 @@
             loco-cli = pkgs.callPackage ./packages/loco-cli {};
             clickup = pkgs.callPackage ./packages/clickup {};
             zed = pkgs.callPackage ./packages/zed {};
+            nvidia-nemo = pkgs.callPackage ./packages/nvidia-nemo { inherit pyproject-nix; };
             libfprint = pkgs.callPackage ./packages/libfprint {};
             mpv-inhibit-gnome = pkgs.callPackage ./packages/mpvScripts/mpv-inhibit-gnome {};
             qtnodeeditor = pkgs.qt6Packages.callPackage ./packages/qt/qnodeeditor {};
@@ -96,6 +98,7 @@
                 loco-cli
                 clickup
                 zed
+                nvidia-nemo
                 ;
         };
     };
