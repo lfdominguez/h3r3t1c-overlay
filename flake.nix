@@ -3,11 +3,17 @@
 
     inputs = {
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
         rust-overlay.url = "github:oxalica/rust-overlay";
         pyproject-nix.url = "github:nix-community/pyproject.nix";
+
+        poetry2nix = {
+            url = "github:nix-community/poetry2nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, pyproject-nix }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, poetry2nix, pyproject-nix }:
     let
         system = "x86_64-linux";
 
@@ -36,6 +42,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
             goto = pkgs.callPackage ./packages/goto {};
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
             loco-cli = pkgs.callPackage ./packages/loco-cli {};
@@ -86,6 +93,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                copypod
                 goto
                 cups-brother-hl3150cdn
                 # segger-jlink
