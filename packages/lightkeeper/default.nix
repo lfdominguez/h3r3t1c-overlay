@@ -7,7 +7,7 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "lightkeeper";
-  version = "0.12.1";
+  version = "0.15.1";
 
   rust = "1.75";
 
@@ -15,7 +15,7 @@ rustPlatform.buildRustPackage rec {
     owner = "kalaksi";
     repo = "lightkeeper";
     rev = "v${version}";
-    hash = "sha256-ZHIjIEJZTkrn5d7K5TBXk3eNAIl7B6DmduEb2H7swkI=";
+    hash = "sha256-Uatm59/Q+DIdacn2hPYus3FublE60kG4EETePDLYCXY=";
   };
 
   nativeBuildInputs = with pkgs; [
@@ -32,7 +32,7 @@ rustPlatform.buildRustPackage rec {
     dbus.lib
   ];
 
-  cargoHash = "sha256-4iyoFM66ALV8iaii4NxBT5w8vO8OX2eO5reOYO70+yI=";
+  cargoHash = "sha256-8j5Jsf9wFFlyyoIIuySNRiPXBeQSOOB8HF2G/xWV2Mo=";
 
   meta = with lib; {
     description = "A modular drop-in replacement for maintaining servers over SSH with shell commands";
