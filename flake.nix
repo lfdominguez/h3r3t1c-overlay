@@ -43,6 +43,7 @@
     in {
         overlays.default = final: prev: rec {
             copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
+            lightkeeper = pkgs.libsForQt5.callPackage ./packages/lightkeeper {};
             goto = pkgs.callPackage ./packages/goto {};
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
             loco-cli = pkgs.callPackage ./packages/loco-cli {};
@@ -107,6 +108,7 @@
                 clickup
                 zed
                 nvidia-nemo
+                lightkeeper
                 ;
         };
     };
