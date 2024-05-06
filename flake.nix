@@ -40,9 +40,28 @@
                 rust-overlay.overlays.default
             ];
         };
+
+        pkgs-cuda = import nixpkgs {
+            inherit system;
+
+            config.allowUnfree = true;
+            config.segger-jlink.acceptLicense = true;
+
+            config.cudaSupport = true;
+            config.cudnnSupport = true;
+
+            overlays = [
+                overlay-unstable
+                self.overlays.default
+                rust-overlay.overlays.default
+            ];
+        };
     in {
         overlays.default = final: prev: rec {
             copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
+            obs-plugins-cuda = {
+                obs-backgroundremoval = pkgs-cuda.callPackage ./packages/obs-plugins/backgroundremoval {};
+            };
             lightkeeper = pkgs.libsForQt5.callPackage ./packages/lightkeeper {};
             goto = pkgs.callPackage ./packages/goto {};
             cups-brother-hl3150cdn = pkgs.callPackage_i686 ./packages/cups/printers/brother/hl3150cdn.nix {};
@@ -95,6 +114,7 @@
             inherit
                 (pkgs)
                 copypod
+                obs-plugins-cuda
                 goto
                 cups-brother-hl3150cdn
                 # segger-jlink
