@@ -58,6 +58,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            cdk-notifier = pkgs.callPackage ./packages/cdk-notifier {};
             copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
             obs-plugins-cuda = {
                 obs-backgroundremoval = pkgs-cuda.callPackage ./packages/obs-plugins/backgroundremoval {};
@@ -113,6 +114,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                cdk-notifier
                 copypod
                 obs-plugins-cuda
                 goto
