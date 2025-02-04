@@ -58,6 +58,7 @@
         };
     in {
         overlays.default = final: prev: rec {
+            deskflow = pkgs.callPackage ./packages/deskflow {};
             cdk-notifier = pkgs.callPackage ./packages/cdk-notifier {};
             copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
             obs-plugins-cuda = {
@@ -114,6 +115,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                deskflow
                 cdk-notifier
                 copypod
                 obs-plugins-cuda
