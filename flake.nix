@@ -58,9 +58,9 @@
         };
     in {
         overlays.default = final: prev: rec {
-            deskflow = pkgs.callPackage ./packages/deskflow {};
+            #deskflow = pkgs.callPackage ./packages/deskflow {};
             cdk-notifier = pkgs.callPackage ./packages/cdk-notifier {};
-            copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
+            #copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
             obs-plugins-cuda = {
                 obs-backgroundremoval = pkgs-cuda.callPackage ./packages/obs-plugins/backgroundremoval {};
             };
@@ -115,9 +115,9 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
-                deskflow
+                #deskflow
                 cdk-notifier
-                copypod
+                #copypod
                 obs-plugins-cuda
                 goto
                 cups-brother-hl3150cdn
