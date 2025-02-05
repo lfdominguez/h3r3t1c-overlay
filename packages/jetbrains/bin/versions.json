@@ -1,5 +1,13 @@
 {
   "x86_64-linux": {
+    "aqua": {
+      "update-channel": "Aqua RELEASE",
+      "url-template": "https://download.jetbrains.com/aqua/aqua-{version}.tar.gz",
+      "version": "2024.3.2",
+      "sha256": "de073e8a3734a2c4ef984b3e1bd68f5de72a6180e73400889510439ac3f419aa",
+      "url": "https://download.jetbrains.com/aqua/aqua-2024.3.2.tar.gz",
+      "build_number": "243.23654.154"
+    },
     "clion": {
       "update-channel": "CLion RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
@@ -131,6 +139,14 @@
     }
   },
   "aarch64-linux": {
+    "aqua": {
+      "update-channel": "Aqua RELEASE",
+      "url-template": "https://download.jetbrains.com/aqua/aqua-{version}-aarch64.tar.gz",
+      "version": "2024.3.2",
+      "sha256": "d2a3c781756a83ccea63dc6d9aebf85f819de1edb5bcd4e5a1a161eaa0779c84",
+      "url": "https://download.jetbrains.com/aqua/aqua-2024.3.2-aarch64.tar.gz",
+      "build_number": "243.23654.154"
+    },
     "clion": {
       "update-channel": "CLion RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}-aarch64.tar.gz",
@@ -262,6 +278,14 @@
     }
   },
   "x86_64-darwin": {
+    "aqua": {
+      "update-channel": "Aqua RELEASE",
+      "url-template": "https://download.jetbrains.com/aqua/aqua-{version}.dmg",
+      "version": "2024.3.2",
+      "sha256": "423d492e9849beb7edbbd1771650a04e8df9f469bf1789b41bc5878c84cee393",
+      "url": "https://download.jetbrains.com/aqua/aqua-2024.3.2.dmg",
+      "build_number": "243.23654.154"
+    },
     "clion": {
       "update-channel": "CLion RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.dmg",
@@ -393,6 +417,14 @@
     }
   },
   "aarch64-darwin": {
+    "aqua": {
+      "update-channel": "Aqua RELEASE",
+      "url-template": "https://download.jetbrains.com/aqua/aqua-{version}-aarch64.dmg",
+      "version": "2024.3.2",
+      "sha256": "43974cdbbb71aaf5bfcfaf2cfd0e69e9920dda3973e64671936c1d52b267494d",
+      "url": "https://download.jetbrains.com/aqua/aqua-2024.3.2-aarch64.dmg",
+      "build_number": "243.23654.154"
+    },
     "clion": {
       "update-channel": "CLion RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}-aarch64.dmg",
