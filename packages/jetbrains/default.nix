@@ -55,7 +55,7 @@ let
       + lib.optionalString meta.isOpenSource (
         if fromSource then " (built from source)" else " (patched binaries from jetbrains)"
       );
-    #maintainers = lib.teams.jetbrains.members ++ map (x: lib.maintainers."${x}") meta.maintainers;
+    maintainers = lib.teams.jetbrains.members ++ map (x: lib.maintainers."${x}") meta.maintainers;
     license = if meta.isOpenSource then lib.licenses.asl20 else lib.licenses.unfree;
     sourceProvenance =
       if fromSource then
@@ -403,8 +403,6 @@ rec {
               xargs patchelf \
                 --replace-needed libssl.so.10 libssl.so \
                 --replace-needed libcrypto.so.10 libcrypto.so
-
-              chmod +x $PWD/plugins/intellij-rust/bin/linux/*/intellij-rust-native-helper
             )
           '';
       });
