@@ -56,8 +56,13 @@
                 rust-overlay.overlays.default
             ];
         };
+
+        alkimia_qt6 = pkgs.qt6Packages.callPackage ./packages/alkimia {};
     in {
         overlays.default = final: prev: rec {
+            kmymoney = pkgs.qt6Packages.callPackage ./packages/kmymoney {
+                inherit alkimia_qt6;
+            };
             #deskflow = pkgs.callPackage ./packages/deskflow {};
             cdk-notifier = pkgs.callPackage ./packages/cdk-notifier {};
             #copypod = pkgs.callPackage ./packages/copypod { inherit poetry2nix; };
@@ -115,6 +120,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                kmymoney
                 #deskflow
                 cdk-notifier
                 #copypod
