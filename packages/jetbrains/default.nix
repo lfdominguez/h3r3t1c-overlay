@@ -11,7 +11,7 @@ in
   callPackage,
   fetchurl,
 
-  jdk,
+  jetbrains,
   zlib,
   python3,
   lldb,
@@ -80,11 +80,13 @@ let
     mkJetBrainsProductCore {
       inherit
         pname
-        jdk
         extraWrapperArgs
         extraLdPath
         extraBuildInputs
         ;
+
+      jdk = jetbrains.jdk;
+
       src =
         if fromSource then
           communitySources."${pname}"
