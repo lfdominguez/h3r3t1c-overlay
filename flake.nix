@@ -60,6 +60,7 @@
         alkimia_qt6 = pkgs.qt6Packages.callPackage ./packages/alkimia {};
     in {
         overlays.default = final: prev: rec {
+            bibata-hyprcursor = pkgs.callPackage ./packages/bibata-hyprcursor {};
             kmymoney = pkgs.qt6Packages.callPackage ./packages/kmymoney {
                 inherit alkimia_qt6;
             };
@@ -120,6 +121,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                bibata-hyprcursor
                 kmymoney
                 #deskflow
                 cdk-notifier
