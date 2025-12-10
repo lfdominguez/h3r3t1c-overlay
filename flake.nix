@@ -60,6 +60,7 @@
         alkimia_qt6 = pkgs.qt6Packages.callPackage ./packages/alkimia {};
     in {
         overlays.default = final: prev: rec {
+            wayscriber = pkgs.callPackage ./packages/wayscriber {};
             bibata-hyprcursor = pkgs.callPackage ./packages/bibata-hyprcursor {};
             kmymoney = pkgs.qt6Packages.callPackage ./packages/kmymoney {
                 inherit alkimia_qt6;
@@ -121,6 +122,7 @@
         packages.x86_64-linux = rec {
             inherit
                 (pkgs)
+                wayscriber
                 bibata-hyprcursor
                 kmymoney
                 #deskflow
